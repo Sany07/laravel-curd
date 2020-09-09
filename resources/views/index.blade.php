@@ -25,16 +25,18 @@
             <td>{{$contact->city}}</td>
             <td>{{$contact->country}}</td>
             <td>
-            <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-primary">Edit</a>
+            <a href="{{ route('contacts.edit',$contact->id)}}"   class="btn btn-primary">Edit</a>
             </td>
 
             <td>
                 <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button onclick="deleteData()"  class="btn btn-danger" type="submit">Delete</button>
                 </form>
             </td>
+            <button onclick="deleteData()"  class="btn btn-danger" type="submit">Delete</button>
+
         </tr>
         @endforeach
     </tbody>

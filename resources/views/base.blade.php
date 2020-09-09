@@ -45,7 +45,25 @@
   </div>
     @yield('main')
   </div>
+
+  <script>
+  
+  function deleteData(){
+          swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+
+        }
+
+
+
+  </script>
   <script src="{{ asset('statics/js/jquery.slim.min.js') }}"></script>
   <script src="{{ asset('statics/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('statics/js/sweet-alert.js') }}"></script>
 </body>
 </html>
