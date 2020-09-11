@@ -18,14 +18,14 @@
     
     <tbody>
         @foreach($contacts as $contact)
-        <tr>
+        <tr id="row_{{$contact->id}}">
             <td>{{$contact->id}}</td>
             <td>{{$contact->first_name}} {{$contact->last_name}}</td>
             <td>{{$contact->email}}</td>
             <td>{{$contact->city}}</td>
             <td>{{$contact->country}}</td>
             <td>
-            <a href="{{ route('contacts.edit',$contact->id)}}"   class="btn btn-primary">Edit</a>
+                <a href="{{ route('contacts.edit',$contact->id)}}"   class="btn btn-primary">Edit</a>
             </td>
 
             <td>
@@ -34,8 +34,10 @@
                   @method('DELETE')
                   <button onclick="deleteData()"  class="btn btn-danger" type="submit">Delete</button>
                 </form>
+            <button onclick="deleteData({{ $contact->id }})"  class="btn btn-danger" type="submit">Delete</button>
             </td>
-            <button onclick="deleteData()"  class="btn btn-danger" type="submit">Delete</button>
+
+
 
         </tr>
         @endforeach
